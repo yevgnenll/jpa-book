@@ -30,5 +30,22 @@ class RegisterMember {
       }
     }
   }
+
+  @Test
+  fun `entity 변경이 일어난다`() {
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var member = em.find(Member::class.java, "member1")
+        assertEquals(member.number, null)
+        member.number = 1010
+      }
+    }
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var member = em.find(Member::class.java, "member1")
+        assertEquals(member.number, 1010)
+      }
+    }
+  }
 }
 
