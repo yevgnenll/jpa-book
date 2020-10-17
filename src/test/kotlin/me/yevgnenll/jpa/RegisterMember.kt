@@ -47,5 +47,24 @@ class RegisterMember {
       }
     }
   }
+
+  @Test
+  fun `준영속 상태 entity 는 DB에 저장되지 않는다`() {
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var member:Member = Member("member100", "john")
+        em.persist(member)
+        em.detach(member)
+      }
+    }
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var member = em.find(Member::class.java, "member100")
+        assertNull(member)
+      }
+    }
+
+  }
+
 }
 
