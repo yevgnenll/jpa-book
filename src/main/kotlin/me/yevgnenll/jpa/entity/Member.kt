@@ -8,7 +8,7 @@ import javax.persistence.Id
 @DynamicUpdate
 data class Member (
   @Id
-  val id:String?,
+  var id:String?,
   var username:String
 ) {
   var number:Int? = null
