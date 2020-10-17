@@ -7,8 +7,9 @@ import javax.persistence.Id
 data class Member (
   @Id
   val id:String?,
-  val username:String
+  var username:String
 ) {
+  var number:Int? = null
   fun getOrder():String {
     return "order"
   }
