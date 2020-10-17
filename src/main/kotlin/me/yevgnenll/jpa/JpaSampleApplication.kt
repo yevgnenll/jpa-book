@@ -7,8 +7,8 @@ import javax.persistence.Persistence
 
 class JpaSampleApplication {
   companion object {
+    val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
     fun jpa(callback:(EntityManager) -> Unit) {
-      var emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
       var em:EntityManager = emf.createEntityManager();
       var tx:EntityTransaction = em.transaction;
 
@@ -17,10 +17,14 @@ class JpaSampleApplication {
         callback(em)
         tx.commit()
       } catch (ex:Exception) {
+
         tx.rollback()
       } finally {
         em.close()
       }
+    }
+
+    fun close() {
       emf.close()
     }
   }
