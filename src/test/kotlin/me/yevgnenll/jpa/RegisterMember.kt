@@ -63,7 +63,29 @@ class RegisterMember {
         assertNull(member)
       }
     }
+  }
 
+  @Test
+  fun `merge 는 준영속 상태의 entity를 영속 상태로 복귀시킨다`() {
+    var member = Member("member200", "sena")
+
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        em.persist(member)
+        var sena = em.find(Member::class.java, "member200")
+        sena.number = 1024
+      }
+    }
+
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var mergedMember:Member = em.merge(member)
+        assertTrue(em.contains(mergedMember))
+        assertFalse(em.contains(member)) // 둘의 객체 상태가 다르다
+        println(mergedMember)
+        println(member)
+      }
+    }
   }
 
 }
