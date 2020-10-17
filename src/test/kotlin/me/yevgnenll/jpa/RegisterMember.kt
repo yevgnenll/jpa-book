@@ -18,11 +18,11 @@ class RegisterMember {
       }
     }
 
-    JpaSampleApplication.jpa { em: EntityManager ->
+    JpaSampleApplication.jpa {
       run {
-        var member = em.find(Member::class.java, "member1")
-        var member2 = em.find(Member::class.java, "member2")
-        var member1 = em.find(Member::class.java, "member1")
+        var member = it.find(Member::class.java, "member1")
+        var member2 = it.find(Member::class.java, "member2")
+        var member1 = it.find(Member::class.java, "member1")
         assertEquals(member.id, "member1")
         assertNotEquals(member1, member2)
         assertEquals(member, member1)
