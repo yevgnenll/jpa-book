@@ -72,18 +72,33 @@ class RegisterMember {
     JpaSampleApplication.jpa { em: EntityManager ->
       run {
         em.persist(member)
+      }
+    }
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
         var sena = em.find(Member::class.java, "member200")
+        assertTrue(em.contains(sena))
         sena.number = 1024
       }
     }
 
     JpaSampleApplication.jpa { em: EntityManager ->
       run {
+        em.flush()
         var mergedMember:Member = em.merge(member)
+        var list = em.createQuery("select m from Member m").resultList
+        println(list.size)
         assertTrue(em.contains(mergedMember))
+        assertEquals(member.number, null)
         assertFalse(em.contains(member)) // 둘의 객체 상태가 다르다
         println(mergedMember)
         println(member)
+      }
+    }
+    JpaSampleApplication.jpa { em: EntityManager ->
+      run {
+        var sena = em.find(Member::class.java, "member200")
+        assertEquals(sena.number, 1024)
       }
     }
   }
