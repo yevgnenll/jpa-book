@@ -21,6 +21,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.hibernate:hibernate-entitymanager:5.4.21.Final")
     testImplementation("junit:junit:4.12")
+    testImplementation("org.junit.platform:junit-platform-commons:1.5.2")
     runtimeOnly("com.h2database:h2:1.4.200")
 }
 
@@ -31,6 +32,11 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "1.8"
+    }
+}
+tasks.compileTestKotlin {
+    kotlinOptions {
         jvmTarget = "1.8"
     }
 }
