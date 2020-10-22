@@ -1,4 +1,4 @@
-package me.yevgnenll.jpa
+package me.yevgnenll.jpa.example
 
 import me.yevgnenll.jpa.entity.Member
 import me.yevgnenll.jpa.entity.Team
