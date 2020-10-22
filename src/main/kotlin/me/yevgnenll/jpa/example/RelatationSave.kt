@@ -10,6 +10,12 @@ fun main(args:Array<String>) {
   JpaSampleApplication.jpa { run { testSelect(it) } }
   JpaSampleApplication.jpa { run { jpqlSelect(it) } }
   JpaSampleApplication.jpa { run { testUpdate(it) } }
+  JpaSampleApplication.jpa { run { testDeleteRelation(it) } }
+}
+
+fun testDeleteRelation(em:EntityManager) {
+  var member = em.find(Member::class.java, "member1")
+  member.team = null
 }
 
 fun testUpdate(em:EntityManager) {
