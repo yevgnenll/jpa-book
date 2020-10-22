@@ -8,9 +8,13 @@ data class Member (
   @Column(name = "member_id")
   var id:String?,
   var username:String,
+) {
+  constructor(id: String, username: String, team:Team):this(id, username) {
+    this.id = id
+    this.username = username
+    this.team = team
+  }
   @ManyToOne
   @JoinColumn(name = "team_id")
-  var team:Team?
-) {
-  var number:Long? = null
+  var team:Team? = null
 }
