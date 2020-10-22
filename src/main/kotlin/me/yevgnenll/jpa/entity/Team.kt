@@ -14,5 +14,5 @@ data class Team(
   var name:String,
 ) {
   @OneToMany(mappedBy = "team")
-  var members: List<Member>? = ArrayList()
+  var members: List<Member> = ArrayList()
 }
