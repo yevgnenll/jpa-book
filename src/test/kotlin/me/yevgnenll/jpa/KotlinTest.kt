@@ -9,7 +9,7 @@ class KotlinTest {
   @Test
   fun `되는가`() {
     assertEquals(10 * 10, 100)
-    var team:Team = Team()
+    var team:Team = Team("team1", "팀1")
     var member: Member = Member("id",  "josh")
   }
 
