@@ -9,5 +9,6 @@ data class Team(
   @Id
   @Column(name = "team_id")
   var id:String,
+  @Column(name = "name")
   var name:String,
 )
