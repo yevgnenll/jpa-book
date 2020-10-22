@@ -9,6 +9,17 @@ fun main(args:Array<String>) {
   JpaSampleApplication.jpa { run { testSave(it) } }
   JpaSampleApplication.jpa { run { testSelect(it) } }
   JpaSampleApplication.jpa { run { jpqlSelect(it) } }
+  JpaSampleApplication.jpa { run { testUpdate(it) } }
+}
+
+fun testUpdate(em:EntityManager) {
+  val team2 = Team("team2", "팀2")
+  em.persist(team2)
+
+  var member = em.find(Member::class.java, "member1")
+  member.team = team2
+
+  println(member)
 }
 
 fun jpqlSelect(em:EntityManager) {
