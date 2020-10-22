@@ -17,4 +17,5 @@ data class Member (
   @ManyToOne
   @JoinColumn(name = "team_id")
   var team:Team? = null
+  var number:Int? = null
 }
