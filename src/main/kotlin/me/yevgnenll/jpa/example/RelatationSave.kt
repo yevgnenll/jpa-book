@@ -8,6 +8,17 @@ import javax.persistence.EntityManager
 fun main(args:Array<String>) {
   JpaSampleApplication.jpa { run { testSave(it) } }
   JpaSampleApplication.jpa { run { testSelect(it) } }
+  JpaSampleApplication.jpa { run { jpqlSelect(it) } }
+}
+
+fun jpqlSelect(em:EntityManager) {
+  var jpql:String = "select m from Member m join m.team t where t.name=:teamName"
+  var results = em.createQuery(jpql, Member::class.java)
+    .setParameter("teamName", "팀1")
+    .resultList
+  for (member in results) {
+    println("member id: ${member.id} 이름: ${member.username}")
+  }
 }
 
 fun testSelect(em:EntityManager) {
