@@ -17,5 +17,12 @@ data class Member (
   @ManyToOne
   @JoinColumn(name = "team_id")
   var team:Team? = null
+  set(value) {
+    if (team != null) {
+      team!!.members.remove(this)
+    }
+    field = value
+    value!!.members.toMutableList().add(this)
+  }
   var number:Int? = null
 }
