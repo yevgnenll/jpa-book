@@ -6,6 +6,7 @@ plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.4.10"
     id("org.jetbrains.kotlin.plugin.jpa") version "1.4.10"
+    id("org.jetbrains.kotlin.plugin.allopen") version "1.3.61"
 }
 
 group = "me.yevgnenll"
@@ -39,4 +40,10 @@ tasks.compileTestKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
 }
