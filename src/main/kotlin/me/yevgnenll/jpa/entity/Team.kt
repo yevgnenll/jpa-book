@@ -6,7 +6,7 @@ import javax.persistence.Id
 import javax.persistence.OneToMany
 
 @Entity
-data class Team(
+data class Team (
   @Id
   @Column(name = "team_id")
   var id:String,
@@ -14,5 +14,5 @@ data class Team(
   var name:String,
 ) {
   @OneToMany(mappedBy = "team")
-  var members: List<Member> = ArrayList()
+  var members: MutableList<Member> = mutableListOf()
 }
