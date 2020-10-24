@@ -1,6 +1,11 @@
 package me.yevgnenll.jpa.entity
 
-class Album(
+import javax.persistence.DiscriminatorValue
+import javax.persistence.Entity
+
+@Entity
+@DiscriminatorValue("A")
+class Album (
   id: Int,
   name: String,
   price: Int,

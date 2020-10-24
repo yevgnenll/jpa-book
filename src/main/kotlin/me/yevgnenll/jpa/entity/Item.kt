@@ -1,10 +1,11 @@
 package me.yevgnenll.jpa.entity
 
-import javax.persistence.Column
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import javax.persistence.*
 
-open class Item (
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "DTYPE")
+data class Item (
   @Id
   @GeneratedValue
   @Column(name = "item_id")
