@@ -4,7 +4,7 @@ import javax.persistence.*
 
 @Entity
 class Parent (
-  @EmbeddedId
-  var id: ParentId,
+  @Id @Column(name = "parent_id")
+  var id: String,
   var name: String
 )

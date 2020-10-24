@@ -2,6 +2,7 @@ package me.yevgnenll.jpa.enhanced.compound
 
 import lombok.EqualsAndHashCode
 import lombok.NoArgsConstructor
+import java.io.Serializable
 import javax.persistence.Column
 import javax.persistence.Embeddable
 
@@ -12,4 +13,4 @@ class ChildId (
   var parentId: String,
   @Column(name = "child_id")
   var id: String
-)
+): Serializable
