@@ -2,7 +2,7 @@ package me.yevgnenll.jpa.enhanced.fk
 
 import javax.persistence.*
 
-@Entity(name = "fk-grandchild")
+@Entity(name = "fk_grandchild")
 class GrandChild (
   @Id @GeneratedValue
   @Column(name = "grandchild_id")
