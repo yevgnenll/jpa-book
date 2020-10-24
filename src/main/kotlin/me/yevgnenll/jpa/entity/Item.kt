@@ -1,21 +1,17 @@
 package me.yevgnenll.jpa.entity
 
-open class Item {
-  var id:Int?=null
-  var name:String?=null
-  var price:Int?=null
-}
+import javax.persistence.Column
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 
-class Album (
-  val artist:String
-):Item()
+open class Item (
+  @Id
+  @GeneratedValue
+  @Column(name = "item_id")
+  var id:Int,
+  var name:String,
+  var price:Int
+)
 
-class Movie (
-  val director:String,
-  val actor:String
-):Item()
 
-class Book(
-  val author:String,
-  val isbn:String
-):Item()
+
