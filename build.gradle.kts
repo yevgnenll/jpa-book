@@ -21,6 +21,7 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.hibernate:hibernate-entitymanager:5.4.21.Final")
+    implementation("org.projectlombok:lombok:1.18.16")
     testImplementation("junit:junit:4.12")
     testImplementation("org.junit.platform:junit-platform-commons:1.5.2")
     runtimeOnly("com.h2database:h2:1.4.200")
