@@ -1,4 +1,4 @@
-package me.yevgnenll.jpa.entity
+package me.yevgnenll.jpa.enhanced.join
 
 import javax.persistence.DiscriminatorValue
 import javax.persistence.Entity
@@ -13,4 +13,4 @@ class Movie (
   price: Int,
   val director:String,
   val actor:String
-):Item(id, name, price)
+): Item(id, name, price)

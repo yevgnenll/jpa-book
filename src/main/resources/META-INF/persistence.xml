@@ -8,7 +8,7 @@
 
         <class>me.yevgnenll.jpa.entity.Member</class>
         <class>me.yevgnenll.jpa.entity.Team</class>
-        <class>me.yevgnenll.jpa.entity.Item</class>
+        <class>me.yevgnenll.jpa.enhanced.join.Item</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>

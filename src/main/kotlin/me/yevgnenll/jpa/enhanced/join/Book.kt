@@ -1,4 +1,4 @@
-package me.yevgnenll.jpa.entity
+package me.yevgnenll.jpa.enhanced.join
 
 import javax.persistence.DiscriminatorValue
 import javax.persistence.Entity
@@ -11,4 +11,4 @@ class Book (
   price: Int,
   val author:String,
   val isbn:String
-):Item(id, name, price)
+): Item(id, name, price)

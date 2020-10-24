@@ -1,4 +1,4 @@
-package me.yevgnenll.jpa.entity
+package me.yevgnenll.jpa.enhanced.join
 
 import javax.persistence.DiscriminatorValue
 import javax.persistence.Entity
@@ -10,4 +10,4 @@ class Album (
   name: String,
   price: Int,
   val artist: String,
-):Item(id, name, price)
+): Item(id, name, price)

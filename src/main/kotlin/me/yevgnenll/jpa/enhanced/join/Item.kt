@@ -1,4 +1,4 @@
-package me.yevgnenll.jpa.entity
+package me.yevgnenll.jpa.enhanced.join
 
 import javax.persistence.*
 
