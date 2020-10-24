@@ -10,6 +10,8 @@
         <class>me.yevgnenll.jpa.entity.Team</class>
         <class>me.yevgnenll.jpa.enhanced.join.Item</class>
         <class>me.yevgnenll.jpa.enhanced.mappedsuper.Member</class>
+        <class>me.yevgnenll.jpa.enhanced.compound.Parent</class>
+        <class>me.yevgnenll.jpa.enhanced.compound.Child</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
