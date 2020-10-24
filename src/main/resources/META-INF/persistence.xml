@@ -16,6 +16,8 @@
         <class>me.yevgnenll.jpa.enhanced.fk.Child</class>
         <class>me.yevgnenll.jpa.enhanced.fk.Parent</class>
         <class>me.yevgnenll.jpa.enhanced.fk.GrandChild</class>
+        <class>me.yevgnenll.jpa.enhanced.onetoone.Board</class>
+        <class>me.yevgnenll.jpa.enhanced.onetoone.BoardDetail</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
