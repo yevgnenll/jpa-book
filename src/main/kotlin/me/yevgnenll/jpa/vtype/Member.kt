@@ -14,5 +14,7 @@ class Member (
   @Embedded
   var period: Period,
   @Embedded
-  var address: Address
+  var address: Address,
+  @Embedded
+  var phoneNumber: PhoneNumber
 )
