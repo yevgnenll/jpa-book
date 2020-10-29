@@ -22,6 +22,7 @@
         <class>me.yevgnenll.jpa.enhanced.link.Parent</class>
         <class>me.yevgnenll.jpa.vtype.Member</class>
         <class>me.yevgnenll.jpa.vtype.PhoneServiceProvider</class>
+        <class>me.yevgnenll.jpa.vtype.collection.Member</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>
