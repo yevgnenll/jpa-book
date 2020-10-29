@@ -11,6 +11,7 @@ fun main() {
       insertCollection(it)
     }
   }
+  JpaSampleApplication.jpa { run { selectCollection(it) } }
 }
 
 fun insertCollection(em: EntityManager) {
@@ -27,4 +28,16 @@ fun insertCollection(em: EntityManager) {
   em.persist(member)
 }
 
+fun selectCollection(em: EntityManager) {
+  var member = em.find(Member::class.java, 1L)
 
+  var foodNames = member.favoriteFood
+
+  for (food in foodNames) {
+    println("음식: $food")
+  }
+
+  var addressHistory = member.addressHistory
+  addressHistory[0]
+
+}
