@@ -20,6 +20,7 @@
         <class>me.yevgnenll.jpa.enhanced.onetoone.BoardDetail</class>
         <class>me.yevgnenll.jpa.enhanced.link.Child</class>
         <class>me.yevgnenll.jpa.enhanced.link.Parent</class>
+        <class>me.yevgnenll.jpa.vtype.Member</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.user" value="sa"/>

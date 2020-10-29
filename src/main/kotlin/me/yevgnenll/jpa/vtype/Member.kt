@@ -1,19 +1,18 @@
 package me.yevgnenll.jpa.vtype
 
-import java.util.*
-import javax.persistence.*
+import javax.persistence.Embedded
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 
-@Entity
+@Entity(name = "v_member")
 class Member (
   @Id @GeneratedValue
   var id: Long,
   var name: String,
-  @Temporal(TemporalType.DATE)
-  var startDate: Date,
-  @Temporal(TemporalType.DATE)
-  var endDate: Date,
 
-  var city: String,
-  var street: String,
-  var zipCode: String
+  @Embedded
+  var period: Period,
+  @Embedded
+  var address: Address
 )
