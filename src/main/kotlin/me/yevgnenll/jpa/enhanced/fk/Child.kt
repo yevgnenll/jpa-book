@@ -9,7 +9,7 @@ class Child (
   var id: Long,
   var name: String,
 
-  @ManyToOne
+  @ManyToOne(cascade = [CascadeType.REFRESH])
   @JoinColumn(name = "parent_id")
   var parent: Parent
 )
