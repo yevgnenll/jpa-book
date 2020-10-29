@@ -13,7 +13,8 @@ fun main() {
 fun save(em: EntityManager) {
   var board = Board("제목")
   em.persist(board)
-
-  var boardDetail = BoardDetail(board.id!!, board, "내용이 이렇고 저렇고")
+  em.flush()
+  var boardDetail = BoardDetail(board = board, content = "내용이 이렇고 저렇고")
   em.persist(boardDetail)
+  board.boardDetail = boardDetail
 }

@@ -7,7 +7,7 @@ import javax.persistence.*
 @NoArgsConstructor
 class BoardDetail (
   @Id
-  var boardId: Long,
+  var boardId: Long? = null,
   @MapsId
   @OneToOne
   @JoinColumn(name = "board_id")
