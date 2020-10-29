@@ -4,9 +4,9 @@ import javax.persistence.Column
 import javax.persistence.Embeddable
 
 @Embeddable
-class Address (
+data class Address (
   @Column(name = "city")
   var city: String,
-  var street: String,
-  var zipcode: String
+  val street: String,
+  val zipcode: String
 )
