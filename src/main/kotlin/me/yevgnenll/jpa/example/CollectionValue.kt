@@ -12,6 +12,7 @@ fun main() {
     }
   }
   JpaSampleApplication.jpa { run { selectCollection(it) } }
+  JpaSampleApplication.jpa { run { updateCollection(it) } }
 }
 
 fun insertCollection(em: EntityManager) {
@@ -40,4 +41,16 @@ fun selectCollection(em: EntityManager) {
   var addressHistory = member.addressHistory
   addressHistory[0]
 
+}
+
+fun updateCollection(em: EntityManager) {
+  var member = em.find(Member::class.java, 1L)
+
+  var favoriteFood = member.favoriteFood
+  favoriteFood.remove("라면")
+  favoriteFood.add("샐러드")
+
+  var addressHistory = member.addressHistory
+  addressHistory.remove(Address("서대문구", "통일로", "123-456"))
+  addressHistory.add(Address("서초구", "방배동", "345-23"))
 }
