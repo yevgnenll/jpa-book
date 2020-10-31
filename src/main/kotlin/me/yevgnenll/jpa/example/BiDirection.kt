@@ -12,7 +12,7 @@ fun main() {
 
 fun biDirection(em: EntityManager) {
   var team = em.find(Team::class.java, "team1")
-  var members:List<Member> = team.members!!
+  var members: List<Member> = team.members!!
 
   for (member in members) {
     println(member)

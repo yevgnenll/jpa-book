@@ -52,7 +52,7 @@ class RegisterMember {
   fun `준영속 상태 entity 는 DB에 저장되지 않는다`() {
     JpaSampleApplication.jpa { em: EntityManager ->
       run {
-        var member:Member = Member("member100", "john")
+        var member: Member = Member("member100", "john")
         em.persist(member)
         em.detach(member)
       }
@@ -85,7 +85,7 @@ class RegisterMember {
     JpaSampleApplication.jpa { em: EntityManager ->
       run {
         em.flush()
-        var mergedMember:Member = em.merge(member)
+        var mergedMember: Member = em.merge(member)
         var list = em.createQuery("select m from Member m").resultList
         println(list.size)
         assertTrue(em.contains(mergedMember))

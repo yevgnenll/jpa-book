@@ -5,12 +5,14 @@ import javax.persistence.*
 
 @Entity
 @NoArgsConstructor
-class Board (
-  var title: String
+class Board(
+        var title: String
 ) {
-  @Id @GeneratedValue
+  @Id
+  @GeneratedValue
   @Column(name = "board_id")
   var id: Long? = null
+
   @OneToOne(mappedBy = "board")
   var boardDetail: BoardDetail? = null
 }

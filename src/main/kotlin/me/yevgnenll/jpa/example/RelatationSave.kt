@@ -5,7 +5,7 @@ import me.yevgnenll.jpa.entity.Member
 import me.yevgnenll.jpa.entity.Team
 import javax.persistence.EntityManager
 
-fun main(args:Array<String>) {
+fun main(args: Array<String>) {
   JpaSampleApplication.jpa { run { testSave(it) } }
   JpaSampleApplication.jpa { run { testSelect(it) } }
   JpaSampleApplication.jpa { run { jpqlSelect(it) } }
@@ -14,7 +14,7 @@ fun main(args:Array<String>) {
   JpaSampleApplication.jpa { run { testDeleteMember(it) } }
 }
 
-fun testDeleteMember(em:EntityManager) {
+fun testDeleteMember(em: EntityManager) {
   var member1 = em.find(Member::class.java, "member1")
   var member2 = em.find(Member::class.java, "member2")
 
@@ -25,12 +25,12 @@ fun testDeleteMember(em:EntityManager) {
   em.remove(member2)
 }
 
-fun testDeleteRelation(em:EntityManager) {
+fun testDeleteRelation(em: EntityManager) {
   var member = em.find(Member::class.java, "member1")
   member.team = null
 }
 
-fun testUpdate(em:EntityManager) {
+fun testUpdate(em: EntityManager) {
   val team2 = Team("team2", "팀2")
   em.persist(team2)
 
@@ -40,23 +40,23 @@ fun testUpdate(em:EntityManager) {
   println(member)
 }
 
-fun jpqlSelect(em:EntityManager) {
-  var jpql:String = "select m from Member m join m.team t where t.name=:teamName"
+fun jpqlSelect(em: EntityManager) {
+  var jpql: String = "select m from Member m join m.team t where t.name=:teamName"
   var results = em.createQuery(jpql, Member::class.java)
-    .setParameter("teamName", "팀1")
-    .resultList
+          .setParameter("teamName", "팀1")
+          .resultList
   for (member in results) {
     println("member id: ${member.id} 이름: ${member.username}")
   }
 }
 
-fun testSelect(em:EntityManager) {
+fun testSelect(em: EntityManager) {
   var member = em.find(Member::class.java, "member1")
-  var team:Team? = member.team
+  var team: Team? = member.team
   println("팀 이름: $team")
 }
 
-fun testSave(em:EntityManager) {
+fun testSave(em: EntityManager) {
   var team = Team("team1", "팀1")
   em.persist(team)
 

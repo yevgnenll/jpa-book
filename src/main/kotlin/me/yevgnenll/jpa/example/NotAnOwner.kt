@@ -6,14 +6,14 @@ import me.yevgnenll.jpa.entity.Team
 import javax.persistence.EntityManager
 
 fun main() {
-  JpaSampleApplication.jpa { run { testSaveNotOwner(it) }}
+  JpaSampleApplication.jpa { run { testSaveNotOwner(it) } }
 }
 
 fun notOwnerSave(em: EntityManager) {
   var team = Team("team100", "팀100")
   em.persist(team)
   team.members = mutableListOf(Member("member100", "멤버100"),
-    Member("member101", "멤버101"))
+          Member("member101", "멤버101"))
 }
 
 fun testSaveNotOwner(em: EntityManager) {

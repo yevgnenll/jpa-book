@@ -7,9 +7,9 @@ import javax.persistence.Entity
 
 @Entity(name = "mapped_super_member")
 @AttributeOverride(name = "id", column = Column(name = "member_id"))
-class Member (
-  id: Long,
-  name: String,
-  createdAt: LocalDateTime,
-  var email: String
-): BaseEntity(id, name, createdAt)
+class Member(
+        id: Long,
+        name: String,
+        createdAt: LocalDateTime,
+        var email: String
+) : BaseEntity(id, name, createdAt)

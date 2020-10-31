@@ -5,12 +5,12 @@ import javax.persistence.*
 
 @Entity
 @NoArgsConstructor
-class BoardDetail (
-  @Id
-  var boardId: Long? = null,
-  @MapsId
-  @OneToOne
-  @JoinColumn(name = "board_id")
-  var board: Board,
-  var content: String
+class BoardDetail(
+        @Id
+        var boardId: Long? = null,
+        @MapsId
+        @OneToOne
+        @JoinColumn(name = "board_id")
+        var board: Board,
+        var content: String
 )

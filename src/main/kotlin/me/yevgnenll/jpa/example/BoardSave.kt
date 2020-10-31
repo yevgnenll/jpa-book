@@ -10,6 +10,7 @@ fun main() {
     run { save(it) }
   }
 }
+
 fun save(em: EntityManager) {
   var board = Board("제목")
   em.persist(board)

@@ -6,10 +6,10 @@ import javax.persistence.Id
 import javax.persistence.MappedSuperclass
 
 @MappedSuperclass
-data class BaseEntity (
-  @Id
-  @GeneratedValue
-  var id: Long,
-  var name: String,
-  var createdAt: LocalDateTime
+data class BaseEntity(
+        @Id
+        @GeneratedValue
+        var id: Long,
+        var name: String,
+        var createdAt: LocalDateTime
 )

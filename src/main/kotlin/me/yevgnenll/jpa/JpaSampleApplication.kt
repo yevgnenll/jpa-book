@@ -8,15 +8,15 @@ import javax.persistence.Persistence
 class JpaSampleApplication {
   companion object {
     val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
-    fun jpa(callback:(EntityManager) -> Unit) {
-      var em:EntityManager = emf.createEntityManager();
-      var tx:EntityTransaction = em.transaction;
+    fun jpa(callback: (EntityManager) -> Unit) {
+      var em: EntityManager = emf.createEntityManager();
+      var tx: EntityTransaction = em.transaction;
 
       try {
         tx.begin()
         callback(em)
         tx.commit()
-      } catch (ex:Exception) {
+      } catch (ex: Exception) {
 
         tx.rollback()
       } finally {
